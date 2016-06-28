@@ -94,6 +94,17 @@
                  <button ng-click="addDataPoint()">Add Data Point</button>
            </div>
          </div>
+        <div class="row">
+         <div class="col-md-6">
+           <form role="form"">
+             <div class="form-group">
+               <label class="checkbox-inline">
+                 <input type="checkbox" ng-model="data.dataAvailable">Data Available</input>
+               </label>
+             </div>
+           </form>
+         </div>
+       </div>
        </div>
      </div>
    </file>
