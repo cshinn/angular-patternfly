@@ -13,8 +13,9 @@
  *
  * @param {object} chartData the data to be shown in the utilization bar chart<br/>
  * <ul style='list-style-type: none'>
- * <li>.used   - number representing the amount used
- * <li>.total  - number representing the total amount
+ * <li>.used          - number representing the amount used
+ * <li>.total         - number representing the total amount
+ * <li>.dataAvailable - Flag if there is data available - default: true
  * </ul>
  *
  * @param {object=} chart-title The title displayed on the left-hand side of the chart
@@ -58,6 +59,17 @@
        <div pf-utilization-bar-chart chart-data=data4 chart-title=title4 chart-footer=footer1 layout=layoutInline units=units4 threshold-error="85" threshold-warning="60"></div>
        <div pf-utilization-bar-chart chart-data=data5 chart-title=title5 chart-footer=footer2 layout=layoutInline units=units5 threshold-error="85" threshold-warning="60"></div>
      </div>
+     <div class="row">
+       <div class="col-md-6">
+         <form role="form"">
+           <div class="form-group">
+             <label class="checkbox-inline">
+               <input type="checkbox" ng-model="data1.dataAvailable">Data Available</input>
+             </label>
+           </div>
+         </form>
+       </div>
+     </div>
    </file>
 
    <file name="script.js">
@@ -69,6 +81,7 @@
     $scope.units1 = 'MB';
 
     $scope.data1 = {
+      'dataAvailable': true,
       'used': '8',
       'total': '24'
     };
