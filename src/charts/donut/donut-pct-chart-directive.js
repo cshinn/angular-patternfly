@@ -29,8 +29,9 @@
  *
  * @param {object} data the Total and Used values for the donut chart.  Available is calculated as Total - Used.<br/>
  * <ul style='list-style-type: none'>
- * <li>.used   - number representing the amount used
- * <li>.total  - number representing the total amount
+ * <li>.used          - number representing the amount used
+ * <li>.total         - number representing the total amount
+ * <li>.dataAvailable - Flag if there is data available - default: true
  * </ul>
  *
  * @param {string=} center-label specifies the contents of the donut's center label.<br/>
@@ -103,6 +104,17 @@
              <div pf-donut-pct-chart config="custConfig" data="custData"></div>
            </div>
          </div>
+         <div class="row">
+           <div class="col-md-6">
+             <form role="form"">
+               <div class="form-group">
+                 <label class="checkbox-inline">
+                   <input type="checkbox" ng-model="custData.dataAvailable">Data Available</input>
+                 </label>
+               </div>
+             </form>
+           </div>
+         </div>
        </div>
      </div>
    </file>
@@ -172,8 +184,8 @@
        };
 
        $scope.availData = {
-           'used': '350',
-            'total': '1000'
+          'used': '350',
+          'total': '1000'
         };
 
        $scope.availLabel = "available";
@@ -223,6 +235,7 @@
          };
 
        $scope.custData = {
+         'dataAvailable': true,
          'used': '670',
          'total': '1000'
        };
