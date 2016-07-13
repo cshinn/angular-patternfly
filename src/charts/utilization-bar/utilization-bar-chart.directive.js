@@ -46,10 +46,11 @@
      <div ng-controller="ChartCtrl">
 
        <label class="label-title">Default Layout, no Thresholds</label>
-       <div pf-utilization-bar-chart chart-data=data1 chart-title=title1 units=units1></div>
+       <div pf-utilization-bar-chart chart-data=data1 chart-title=title1
+       units=units1></div>
        <br>
        <label class="label-title">Inline Layouts with Error, Warning, and Ok Thresholds</label>
-       <div pf-utilization-bar-chart chart-data=data5 chart-title=title5 layout=layoutInline units=units5 threshold-error="85" threshold-warning="60"></div>
+       <div pf-utilization-bar-chart chart-data=data5 chart-title=title5 layout=layoutInline units=units5 threshold-error="85" threshold-warning="60">../utilization-trend/utilization-trend-chart-directive.js</div>
        <div pf-utilization-bar-chart chart-data=data3 chart-title=title3 layout=layoutInline units=units3 threshold-error="85" threshold-warning="60"></div>
        <div pf-utilization-bar-chart chart-data=data2 chart-title=title2 layout=layoutInline units=units2 threshold-error="85" threshold-warning="60"></div>
        <br>
@@ -58,7 +59,6 @@
        <div pf-utilization-bar-chart chart-data=data3 chart-title=title3 layout=layoutInline footer-label-format='percent' units=units3 threshold-error="85" threshold-warning="60"></div>
        <div pf-utilization-bar-chart chart-data=data4 chart-title=title4 chart-footer=footer1 layout=layoutInline units=units4 threshold-error="85" threshold-warning="60"></div>
        <div pf-utilization-bar-chart chart-data=data5 chart-title=title5 chart-footer=footer2 layout=layoutInline units=units5 threshold-error="85" threshold-warning="60"></div>
-     </div>
      <div class="row">
        <div class="col-md-6">
          <form role="form"">
@@ -69,6 +69,7 @@
            </div>
          </form>
        </div>
+     </div>
      </div>
    </file>
 
@@ -142,6 +143,7 @@ angular.module('patternfly.charts').directive('pfUtilizationBarChart', function 
       footerLabelFormat: '@?',
       layout: '=?'
     },
+
     templateUrl: 'charts/utilization-bar/utilization-bar-chart.html',
     link: function (scope) {
       scope.$watch('chartData', function (newVal, oldVal) {
